@@ -1,19 +1,22 @@
 import { Box, Button, Grid, TextField } from '@mui/material'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
+import { addProject } from '@/redux'
+import { useAppDispatch } from '@/hooks'
 
 const validationSchema = yup.object({
   title: yup.string().required('Nombre requerido'),
 })
 
 const AddProjectForm = () => {
+  const dispatch = useAppDispatch()
   const formik = useFormik({
     initialValues: {
       title: '',
     },
     validationSchema,
     onSubmit: (value, { resetForm }) => {
-      console.log(value)
+      dispatch(addProject(value))
       resetForm()
     },
   })
@@ -41,4 +44,5 @@ const AddProjectForm = () => {
     </Box>
   )
 }
+
 export default AddProjectForm
