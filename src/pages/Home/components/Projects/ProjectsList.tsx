@@ -8,7 +8,7 @@ const ProjectsList = () => {
     <Grid container spacing={2} sx={{ my: 1 }}>
       {projects?.map((project: any) => (
         <Grid item xs={12} key={project.title}>
-          <ProjectCard title={project.title} />
+          <ProjectCard id={project.id} title={project.title} />
         </Grid>
       ))}
     </Grid>

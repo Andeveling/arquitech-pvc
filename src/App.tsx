@@ -20,7 +20,7 @@ const App = () => {
             <Navbar />
             <Routes>
               <Route path={PublicRoutes.HOME} element={<Home />} />
-              <Route path={PublicRoutes.PROJECT + '/:name'} element={<ProjectDetails />} />
+              <Route path={PublicRoutes.PROJECT + '/:id'} element={<ProjectDetails />} />
               <Route path='*' element={<h1>404</h1>} />
             </Routes>
             <Footer />

@@ -1,5 +1,5 @@
-export * from './Home/components/AddProject'
+export * from './Home/components/Projects/AddProject'
 export * from './Home/components/Projects'
+export * from './Home/components/PvcWindows'
 export * from './Home/components/Search'
 export * from './Home'
-export * from './index'

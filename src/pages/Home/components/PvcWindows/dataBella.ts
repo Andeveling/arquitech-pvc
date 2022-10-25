@@ -1,7 +1,11 @@
 export const discount = 35
 export const waste = 1.05
 export const trm = 3829
-export const factory = 16000
+export const factoryMaterial = 3.5
+export const MOD = 2.1
+export const CIF = 2.27
+export const Protection = 0.91
+export const series = ['Bella Sliding']
 export const bella = {
   marco: {
     id: 1,
@@ -52,6 +56,7 @@ export const bella = {
     price: 1.94,
     discount: true,
   },
+  timeProduction: 4,
 }
 
 export const herrajes = {
@@ -68,20 +73,20 @@ export const glasses = [
     name: 'Crudo 4mm',
     type: 'crudo',
     caliber: 4,
-    price: 25000,
+    price: 5.08,
   },
   {
     id: 2,
     name: 'Templado 5mm',
     type: 'Templado',
     caliber: 5,
-    price: 58000,
+    price: 11.79,
   },
   {
     id: 3,
     name: 'Laminado 8mm 4+4',
     type: 'crudo Laminado',
     caliber: 8,
-    price: 75000,
+    price: 15.25,
   },
 ]

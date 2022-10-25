@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { PublicRoutes } from '@/routes'
 import { useNavigate } from 'react-router-dom'
 
-const ProjectCard = ({ title }: { title: string }) => {
+const ProjectCard = ({ id, title }: { id: string | number; title: string }) => {
   const navigate = useNavigate()
   return (
     <Card variant='elevation' sx={{ display: 'flex', justifyContent: 'space-between', p: 1 }}>
@@ -16,7 +16,7 @@ const ProjectCard = ({ title }: { title: string }) => {
           <Typography>{title}</Typography>
         </CardContent>
       </Box>
-      <IconButton size='large' color='warning' onClick={() => navigate(`${PublicRoutes.PROJECT}/${title}`)}>
+      <IconButton size='large' color='warning' onClick={() => navigate(`${PublicRoutes.PROJECT}/${id}`)}>
         <ArrowForwardIosIcon />
       </IconButton>
     </Card>

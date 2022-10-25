@@ -26,7 +26,7 @@ export default function Navbar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6'>MUI</Typography>
+      <Typography variant='h6'>Arquitetech PVC</Typography>
       <Divider />
       <MenuDrawer />
     </Box>
@@ -48,7 +48,7 @@ export default function Navbar(props: Props) {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'block' } }}>
-            MUI
+            Arquitech PVC
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             <MenuNav />

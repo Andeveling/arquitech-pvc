@@ -1,5 +1,5 @@
 export { default as Home } from './Home'
-export * from './components/AddProject'
+export * from './components/Projects/AddProject'
 export * from './components/Projects'
 export * from './components/PvcWindows'
 export * from './components/Search'
