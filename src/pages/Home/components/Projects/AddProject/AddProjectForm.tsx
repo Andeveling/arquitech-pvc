@@ -6,6 +6,8 @@ import { useAppDispatch } from '@/hooks'
 
 const validationSchema = yup.object({
   title: yup.string().required('Nombre requerido'),
+  address: yup.string().required('La direccion es requerida'),
+  client: yup.string().required('El nombre del cliente es requerido'),
 })
 
 const AddProjectForm = () => {

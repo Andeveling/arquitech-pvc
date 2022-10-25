@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField'
 import { useFormik } from 'formik'
 import { addWindow } from '@/redux'
 import * as yup from 'yup'
-import { bella, Protection, factoryMaterial, glasses, herrajes, waste, series, CIF, MOD } from './dataBella'
+import { bella, Protection, factoryMaterial, glasses, herrajes, waste, series, CIF, MOD, trm } from './dataBella'
 
 const validationSchema = yup.object({
   width: yup.number().min(600, 'El ancho minimo es 600').max(2200, 'El alto debe ser').required('Ancho requerido'),
@@ -70,7 +70,10 @@ const AddPvcWindowsForm = () => {
       console.log('Proteccion ' + Protect)
       console.log('Mano de obra y cifs ' + MODLocal)
       console.log({ ...values, price: TotalMateriales + MODLocal + Protect })
-      dispatch(addWindow({ ...values, price: TotalMateriales + MODLocal + Protect }))
+
+      const finalPrice = ((TotalMateriales + MODLocal + Protect) / (1 - 0.2)) * trm
+
+      dispatch(addWindow({ ...values, price: finalPrice }))
     },
   })
 
@@ -90,7 +93,7 @@ const AddPvcWindowsForm = () => {
             <MenuItem value={formik.values.series}>{series[0]}</MenuItem>
           </Select>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             id='reference'
@@ -104,7 +107,7 @@ const AddPvcWindowsForm = () => {
             helperText={formik.touched.reference && formik.errors.reference}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             id='location'
@@ -118,19 +121,7 @@ const AddPvcWindowsForm = () => {
             helperText={formik.touched.location && formik.errors.location}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <TextField
-            fullWidth
-            id='cant'
-            name='cant'
-            label='cant'
-            type='number'
-            value={formik.values.cant}
-            onChange={formik.handleChange}
-            error={formik.touched.cant && Boolean(formik.errors.cant)}
-            helperText={formik.touched.cant && formik.errors.cant}
-          />
-        </Grid>
+
         <Grid item xs={12} sm={6} md={6}>
           <TextField
             fullWidth
@@ -157,6 +148,19 @@ const AddPvcWindowsForm = () => {
             onChange={formik.handleChange}
             error={formik.touched.height && Boolean(formik.errors.height)}
             helperText={formik.touched.height && formik.errors.height}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <TextField
+            fullWidth
+            id='cant'
+            name='cant'
+            label='cant'
+            type='number'
+            value={formik.values.cant}
+            onChange={formik.handleChange}
+            error={formik.touched.cant && Boolean(formik.errors.cant)}
+            helperText={formik.touched.cant && formik.errors.cant}
           />
         </Grid>
         <Grid item xs={12}>

@@ -1,6 +1,6 @@
 export const discount = 35
 export const waste = 1.05
-export const trm = 3829
+export const trm = 4975.2
 export const factoryMaterial = 3.5
 export const MOD = 2.1
 export const CIF = 2.27

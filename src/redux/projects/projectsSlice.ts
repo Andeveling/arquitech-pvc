@@ -24,12 +24,15 @@ export const projectSlice = createSlice({
     addWindow: (state, action) => {
       const { id, ...res } = action.payload
       const project = state.projects[0]
-      if (project) project.windows.push(res as never)
       let total = 0
-      for (const win of project.windows) {
-        total += win.price
+
+      if (project) {
+        project.windows.push(res as never)
       }
-      console.log(total)
+      for (const win of project.windows) {
+        total += win.price * win.cant
+      }
+      project.total = total
     },
   },
 })

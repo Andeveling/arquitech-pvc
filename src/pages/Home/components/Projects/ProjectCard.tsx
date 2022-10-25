@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
-import { IconButton } from '@mui/material'
+import { Button } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { PublicRoutes } from '@/routes'
 import { useNavigate } from 'react-router-dom'
@@ -16,9 +16,9 @@ const ProjectCard = ({ id, title }: { id: string | number; title: string }) => {
           <Typography>{title}</Typography>
         </CardContent>
       </Box>
-      <IconButton size='large' color='warning' onClick={() => navigate(`${PublicRoutes.PROJECT}/${id}`)}>
+      <Button size='large' color='warning' onClick={() => navigate(`${PublicRoutes.PROJECT}/${id}`)}>
         <ArrowForwardIosIcon />
-      </IconButton>
+      </Button>
     </Card>
   )
 }

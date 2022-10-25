@@ -9,6 +9,7 @@ import { Home } from '@/pages/'
 import { store } from '@/redux'
 import { Provider } from 'react-redux'
 import ProjectDetails from './pages/Home/components/Projects/ProjectDetails'
+import { Summary } from './pages/Summary'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Routes>
               <Route path={PublicRoutes.HOME} element={<Home />} />
               <Route path={PublicRoutes.PROJECT + '/:id'} element={<ProjectDetails />} />
+              <Route path={PublicRoutes.PROJECT_RENDER + '/:id'} element={<Summary />} />
               <Route path='*' element={<h1>404</h1>} />
             </Routes>
             <Footer />

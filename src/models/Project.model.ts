@@ -5,5 +5,6 @@ export interface ProjectI {
   title: string
   address: string
   client: string
+  total: number
   windows: WindowI[]
 }
